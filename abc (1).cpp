@@ -4,13 +4,12 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <cstring>
 #include <dirent.h>
 #define n 8
 using namespace std;
 
-class hospital
+class hospitality
 {
 	string disease, name, m_q, price, medid, age,s_id;
 	char *find;
@@ -32,7 +31,7 @@ public:
 	void remove_data();
 	void modify_data();
 };
-void hospital::display_all_patient_data()
+void hospitality::display_all_patient_data()
 {
 	string data;
 	ifstream read("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\data.txt");
@@ -40,7 +39,7 @@ void hospital::display_all_patient_data()
 		cout << data << endl;
 	read.close();
 }
-void hospital ::display_all_patient_list()
+void hospitality ::display_all_patient_list()
 {
 	string data;
 	ifstream read("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\data.txt");
@@ -53,7 +52,7 @@ void hospital ::display_all_patient_list()
 	}
 	read.close();
 }
-void hospital ::write_data()
+void hospitality ::write_data()
 {
 	ofstream write("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\data.txt", std::ios_base::app);
 	write << "Medicine id : " << medid << endl;
@@ -67,7 +66,7 @@ void hospital ::write_data()
 	write << endl;
 	write.close();
 }
-void hospital ::remove_data()
+void hospitality ::remove_data()
 {
 	string data;
 	int count = n+1;
@@ -104,7 +103,7 @@ void hospital ::remove_data()
 	// remove("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\temp.txt");
 }
 
-void hospital ::modify_data()
+void hospitality ::modify_data()
 {
 	string data;
 	int count = n;
@@ -158,7 +157,7 @@ void hospital ::modify_data()
 	write.close();
 	remove("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\temp.txt");
 }
-void hospital ::get_data()
+void hospitality ::get_data()
 {
 	cout << "Patient Name : ";
 	cin.sync();
@@ -180,7 +179,7 @@ void hospital ::get_data()
 	total*=atoi(m_q.c_str());
 }
 
-void hospital ::display_one_patient_data()
+void hospitality ::display_one_patient_data()
 {
 	string data;
 	int count = n;
@@ -201,7 +200,7 @@ void hospital ::display_one_patient_data()
 	cout << "No data found" << endl;
 	read.close();
 }
-bool hospital::check_exist(string id)
+bool hospitality::check_exist(string id)
 {
 	string data;
 	ifstream read("C:\\Users\\Lenovo\\Desktop\\Program\\txt_data\\data.txt");
